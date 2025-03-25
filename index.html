@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SJ</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- CSS File -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="dark">
+
+ <!-- Dark/Light Mode Toggle -->
+  <button class="toggle-btn" onclick="toggleMode()">🌞/🌙</button>
+
+  <div class="container">
+    <!-- Center Avatar -->
+    <div class="center-avatar">
+      <!-- <img src="https://emojiisland.com/cdn/shop/products/Thinking_Face_Emoji_large.png" alt="Avatar" /> -->
+      <img src="src/myface.png" alt="Avatar" />
+      <h2>SJ's Space™</h2>
+      <div class="underline"></div>
+    </div>
+
+    <!-- Icons Around -->
+    <div class="icon" title="Portfolio">
+      <a href="https://portfolio.subnx.in" target="_self">
+      <i class="fas fa-globe fa-2x"></i>
+    </a>
+     </div>
+
+    <div class="icon" title="Linkedin"> 
+      <a href="https://www.linkedin.com/in/thejnanasagar" target="_self">
+      <i class="fa-brands fa-linkedin fa-2x"></i> 
+    </a>
+    </div>
+
+    <div class="icon" title="Github"> 
+     <a href="https://github.com/jnanasaj" target="_self">
+     <i class="fab fa-github fa-2x"></i>
+    </a> 
+    </div>
+
+    <div class="icon" title="Twitter(X)">
+      <a href="https://x.com/jnanasagar1998" target="_self">      
+      <i class="fab fa-x-twitter fa-2x"></i>
+    </a>
+    </div>
+
+    <div class="icon" title="Server"> 
+      <!-- <a href="black" target="_self"> -->
+        <a href="#" onclick="showPopup()"> <!--- popup code -->
+      <i class="fas fa-server fa-2x"></i>
+    </a>
+    </div>
+
+    <div class="icon" title="LLM"> 
+      <a href="black" target="_self">
+      <i class="fa-solid fa-computer fa-2x"></i>
+    </a>
+    </div>
+
+    <div class="icon" title="Email"> 
+      <a href="mailto:jnanasagarnb@gmail.com">
+      <i class="fa-solid fa-envelope fa-2x"></i>
+    </a>
+    </div>
+
+    <div class="icon" title="Blog"> 
+      <!-- <a href="black" target="_self"> -->
+      <a href="#" onclick="showPopup()">
+      <i class="fa-solid fa-rss fa-2x"></i>
+    </a>
+
+    </div>
+
+  </div>
+
+    <!-- Popup Modal -->
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <h3>ERROR:505</h3>
+        <p>Stay tuned!</p>
+      </div>
+    </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="left">Jnana Sagar © 2025</div>
+    <div class="right">v 2.2</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

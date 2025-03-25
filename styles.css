@@ -1,0 +1,224 @@
+:root {
+  --light-bg: #f0f0f0;
+  --light-text: #333;
+  --dark-bg: #1e1e1e;
+  --dark-text: #f0f0f0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.light {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+body.dark {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.toggle-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.light .toggle-btn {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-avatar {
+  text-align: center;
+}
+
+.center-avatar img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.center-avatar h2 {
+  margin: 10px 0 0 0;
+}
+
+.underline {
+  width: 80px;
+  height: 4px;
+  background-color: #ff5252;
+  margin: 5px auto 0;
+  border-radius: 2px;
+}
+
+.icon {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, background-color 0.3s, color 0.3s;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+body.dark .icon {
+  background-color: #333;
+  color: #fff;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+/* Positioning Icons in Circle */
+.icon:nth-of-type(2) { top: 0; left: 50%; transform: translate(-50%, -50%); }
+.icon:nth-of-type(3) { top: 20%; left: 85%; transform: translate(-50%, -50%); }
+.icon:nth-of-type(4) { top: 50%; left: 100%; transform: translate(-50%, -50%); }
+.icon:nth-of-type(5) { bottom: 20%; left: 85%; transform: translate(-50%, 50%); }
+.icon:nth-of-type(6) { bottom: 0; left: 50%; transform: translate(-50%, 50%); }
+.icon:nth-of-type(7) { bottom: 20%; left: 15%; transform: translate(-50%, 50%); }
+.icon:nth-of-type(8) { top: 20%; left: 15%; transform: translate(-50%, -50%); }
+.icon:nth-of-type(9) { top: 50%; left: 3%; transform: translate(-50%, -50%); }
+/* Footer styles */
+.footer {
+  position: fixed;
+  bottom: 10px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-family: Arial, sans-serif;
+  pointer-events: none; /* So it doesn't block button clicks */
+}
+
+.footer .left,
+.footer .right {
+  transition: color 0.3s ease;
+}
+
+/* Base icon link styling */
+.icon a {
+  color: inherit; /* Inherits color from the parent or body */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Dark mode - icons white */
+body.dark .icon a i {
+  color: #ffffff;
+}
+
+/* Light mode - icons black */
+body.light .icon a i {
+  color: #000000;
+}
+/* pop-up */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+  position: relative;
+}
+
+.close-btn {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+/* Adjust popup color for dark mode */
+body.dark .popup-content {
+  background-color: #333;
+  color: #fff;
+}
+
+svg {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 150px;
+	width: 150px;
+}
+
+.center-avatar img {
+  width: 200px;    /* adjust width as needed */
+  height: 200px;   /* adjust height as needed */
+  object-fit: cover; /* keeps the image from distorting */
+  border-radius: 50%; /* optional: makes it circular */
+}
+
+.center-avatar h2 {
+  margin-top: -20px; /* move it upwards */
+  margin-right: -15px;
+  font-size: 1.8rem;  /* optional: adjust font size */
+  color: inherit;     /* ensures it follows dark/light mode */
+}
+
+.center-avatar {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style for all the icons */
+.icon a {
+  display: inline-block; /* Ensures transform works properly */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect: enlarge + subtle shadow */
+.icon a:hover {
+  transform: scale(1.2); /* Enlarges the icon by 20% */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Optional: Adds a glow/shadow */
+}
